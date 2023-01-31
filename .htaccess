@@ -1,0 +1,8 @@
+# commentaire en langage apache
+# on démarre le moteur php de réecriture d'URL
+RewriteEngine on
+# on élimine les vrais fichiers et les dossiers de la règle de réecriture
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-de
+# on met en place les règles de réecriture
+RewriteRule ^(.*)$ index.php?path1=$1 [NC,L,QSA]
